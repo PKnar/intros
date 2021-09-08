@@ -1,0 +1,465 @@
+@font-face {
+    font-family: Columbia;
+    src: url('../assets/font/columbia_by_629lyric-d9f36mr.ttf');
+}
+
+
+
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+
+body{
+    background-color: black;
+    font-family: 'Montserrat', sans-serif;
+    overflow: hidden;
+}
+
+
+
+
+header{
+    display: none;
+} 
+
+/* INTRO SCREEN */
+
+.intro-screen{
+    width:100%;
+    color:white;
+    height: 100vh;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    font-family: Columbia;
+    position: absolute;
+    z-index: 9999
+
+}
+
+.intro-screen h1{
+    font-size: 4rem;
+}
+
+.intro-screen button{
+    padding: 0.5rem 3rem;
+    text-transform: uppercase;
+    margin: 1rem;
+    cursor: pointer;
+
+}
+
+/* LAYERS */
+
+
+video{
+    min-height: 100vh;
+    transform: scale(2);
+    animation: zoomOut 4s forwards linear;
+    position: absolute;
+    z-index: 0;
+}
+
+.heading{
+    position:absolute;
+    text-align: center;
+    margin-top: 50px;
+    font-size: 11rem;
+    letter-spacing: 20px;
+    font-family: Columbia;
+    width: 100%;
+}
+
+#shadow {
+    z-index:1;
+	text-shadow: -1px -1px 1px #fff, 1px 1px 1px #000;
+     animation: fadeIn 7s forwards 12s  ;  
+    opacity: 0;
+  }
+
+#title{
+  
+    z-index:2;
+    opacity: 1;
+    animation: fadeIn 7s forwards 12s;
+    background: url(../assets/media/pexels-polina-kovaleva-6788341.jpg) no-repeat center center;
+    background-size: cover;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    -moz-background-clip:text;
+    background-clip:text; 
+    opacity: 0; 
+}
+
+.torch-lady{
+    position: absolute;
+    background-image: url("../assets/media/Lady.png");
+    height: 200vh;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    transform: translateY(100vh) scale(2);
+    animation: slideUp 10s forwards 2s linear ; 
+    z-index: 3;     
+      
+}
+
+
+/* FLASH */
+
+
+
+
+.light-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    z-index: 10;
+    position: absolute;
+    background-color: black;
+    animation: fadeOut 6s forwards 1s linear;
+
+  }
+  
+  .light {
+    background-color: white;
+    transform: translateY(0);
+    height: 400px;
+    width: 400px;
+  border-radius: 100%;
+    position: relative;
+    z-index: 5;
+    box-shadow: 1px 1px 100px 200px white;
+  
+    animation: flash 10s forwards 1s linear;
+   
+  }
+  
+
+/* RAINBOX */
+
+
+.rainbow-group{
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+  
+   
+}
+
+.parent{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  transform: translateY(-20%);
+}
+
+ .rainbow {
+    position: absolute;
+    border-radius: 100%;
+
+} 
+
+.big-rainbow{
+    border-radius: 100%;
+    opacity: 0;
+    animation: fadeIn 7s forwards 12s;
+  
+}
+
+
+.big-rainbow .red{
+    width: 1000px;
+    height:1000px ;
+  
+}
+
+.big-rainbow .orange{
+    width:990px;
+    height:990px ;
+}
+
+
+.big-rainbow .yellow{
+    width:980px;
+    height:980px ;
+  
+}
+
+
+.big-rainbow .green{
+    width:970px;
+    height:970px ;
+  
+}
+
+.big-rainbow .blue{
+    width:960px;
+    height:960px ;;
+  
+}
+
+.big-rainbow .indigo{
+    width:950px;
+    height:950px ;
+
+}
+
+
+
+.orange {
+    
+    box-shadow:10px 10px 60px rgba(255, 166, 0, 0.164) ;
+
+}
+.red {
+
+    box-shadow:10px 10px 60px rgba(255, 0, 0, 0.144) ;
+ 
+
+}
+.yellow{
+    box-shadow:10px 10px 60px rgba(255, 255, 0, 0.164);
+}
+.green {
+    box-shadow:10px 10px 60px rgba(0, 128, 0, 0.137) ;
+   
+}
+
+
+.indigo {
+    box-shadow:10px 10px 60px rgba(76, 0, 130, 0.055) ;
+}
+
+
+
+/* RAYS */
+.rays {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translate(-50px, -10vh);
+    opacity: 0;
+    animation: raysZoomOut 4s forwards 3s linear,
+         fadeInRays 6s forwards;;
+  }
+  
+  .ray {
+    transform: translateY(0);
+    height: 2000px;
+    width: 2px;
+    box-shadow: 10px 10px 100px 10px rgb(255, 255, 255);
+    background:linear-gradient( transparent,rgb(255, 255, 255), transparent);
+    border: 100%;
+
+  opacity: 0.3;
+    transition: all 1s;
+    
+  }
+
+
+  .ray1 {
+    transform: rotate(140deg);
+    animation: rays 1s infinite ;
+   
+  }
+  
+  .ray2 {
+    transform: rotate(-140deg);
+    animation: rays 2s infinite ;
+  }
+  
+  .ray3 {
+    transform: rotate(75deg);
+    animation: rays  3s infinite ;
+  }
+  
+  .ray4 {
+    transform: rotate(-75deg);
+    animation: rays  4s infinite ;
+  }
+  
+  .ray5 {
+    transform: rotate(120deg);
+    animation: rays  5s  infinite ;
+  }
+  
+  .ray6 {
+    transform: rotate(100deg);
+    animation: rays  6s  infinite ;
+  }
+  
+  .ray7 {
+    transform: rotate(-100deg);
+    animation: rays  7s  infinite ;
+  }
+  
+  .ray8 {
+    transform: rotate(10deg);
+    animation: rays  8s  infinite  ;
+  }
+  
+  .ray9 {
+    transform: rotate(-10deg);
+    animation: rays  9s  infinite ;
+  }
+
+  .ray10 {
+    transform: rotate(-30deg);
+    animation: rays  10s  infinite ;
+  }
+
+  
+  .ray11 {
+    transform: rotate(50deg);
+    animation: rays  10s  infinite ;
+  }
+
+
+  
+  .ray12 {
+    transform: rotate(70deg);
+    animation: rays  12s  infinite ;
+  }
+
+  
+  .ray13 {
+    transform: rotate(-70deg);
+    animation: rays  13s  infinite ;
+  }
+
+  @keyframes rays {
+    0% {
+      height: 1000px;
+    }
+  
+    50% {
+      height:3000px;
+    }
+  
+    100% {
+      height: 2000px;
+    }
+  }
+
+  @keyframes raysZoomOut {
+
+    to{
+        transform: translate(-60px, -30vh) ;
+    }
+      
+  }
+  
+  
+
+/* HIDE SHOW */
+.hide{
+    display: none;
+
+}
+
+.show{
+    display: block;
+}
+
+
+
+
+
+/* ANIMATION */
+
+
+@keyframes zoomOut {
+
+    from {
+        transform: scale(2);
+    }
+
+    to{
+        transform: scale(1);  
+    }
+}
+
+
+@keyframes fadeIn {
+
+    from {
+       opacity: 0;
+   
+    }
+
+    to{
+        opacity: 1;
+       
+    }
+}
+
+
+@keyframes slideUp {
+    from {
+      transform: translateY(100vh) scale(2);
+    }
+  
+    to {
+      transform: translateY(-40vh) scale(0.5);
+    }
+  }
+
+
+  @keyframes fadeOut {
+    from {
+      background-color: black;
+    }
+    to {
+      background-color: transparent;
+    }
+  }
+
+  
+@keyframes flash {
+    from {
+        transform: scale(2);
+      }
+    
+      to {
+        width: 10px;
+        height: 10px;
+        transform: translate(-50px, -30vh) scale(0.3);
+      }
+  
+
+
+}
+
+
+@keyframes fadeInRays {
+
+  to{
+    opacity: 0.3;
+  }
+  
+}
+
+@keyframes zoomOutFlash {
+
+
+    to{
+        transform: translate(-50px, -30vh) scale(0.2);
+    }
+}
+
+
+
+
+
+
