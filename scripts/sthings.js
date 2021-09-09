@@ -6,7 +6,18 @@
 
   playButton.addEventListener("click", (e) => {
     intro.classList.add("hide");
-    //title.classList.add('show');
+
     audio.play();
   });
+
+  audio.addEventListener(
+    "timeupdate",
+    function () {
+      var currentTimeMs = Math.floor(audio.currentTime);
+      if (currentTimeMs === 8) {
+        title.classList.add("show");
+      }
+    },
+    false
+  );
 })();
