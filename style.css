@@ -12,7 +12,27 @@ header{
    justify-content: center;
    align-items: center;
    flex-wrap: wrap;
+   flex-direction: column;
 }
+
+
+
+header h1,h5{
+    color: white;
+    font-family: "Montserrat", sans-serif;
+    text-align: center;
+    text-transform: uppercase;
+
+}
+
+header h1{
+    margin-bottom: 0.5rem;
+}
+
+.title-wrapper{
+    margin-bottom: 2rem;
+}
+
 
 .container{
     width:400px;
@@ -26,6 +46,14 @@ header{
     background-position:center;
 
   
+}
+
+.flex-row{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+
+    justify-content: center;
 }
 
 .sthings{
